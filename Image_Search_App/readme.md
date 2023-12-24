@@ -3,7 +3,7 @@
 ## Create image search using HTML, CSS, javascript and also fetch API 
 
  ## Overview 🚀
-<p>An image search application using HTML, CSS, JavaScript, and the Fetch API allows users to search for and view images dynamically on a web page.</P>
+An image search application using HTML, CSS, JavaScript, and the **Fetch API allows users to search for and view images dynamically on a web page**.
 
 ## Features ✨
  📚 User-Friendly Interface
