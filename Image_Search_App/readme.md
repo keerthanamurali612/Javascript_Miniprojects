@@ -42,4 +42,10 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
   ```
   const accessKey = API_KEY;
   ```
-  
+
+  ## Dynamic URL
+- Dynamic URLs can also be used to create more **SEO-friendly websites**. By using dynamic URLs, you can create **unique URLs for each page on your website**, which can help search engines to better understand your website and its content.
+- For example, a dynamic URL could be used to display a **different product list based on the category** that the user has selected or to update the contents of a shopping cart as the **user adds or removes items**.
+    ```
+    const url= "http://www.domain.com/category/article.php?language=de&inhalt=dynamic-url"
+    ```
