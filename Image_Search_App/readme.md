@@ -29,3 +29,17 @@ An image search application using HTML, CSS, JavaScript, and the **Fetch API all
 🛠️Asynchronous Data Fetching
 - Implement asynchronous data fetching using the **Fetch API** in JavaScript.
 - Show loading indicators during the image **retrieval process to enhance the user experience**.
+
+
+## Fetch API to make a basic GET request :
+- This code fetches data from 'https://jsonplaceholder.typicode.com/', parses the response as JSON, and logs the data to the console. The catch block handles any errors that may occur during the fetch operation.
+```
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
+```
+- In my mini-project, I used the API key in the **Unsplash website**, you can use the **developer/API key**.
+  ```
+  const accessKey = API_KEY;
+  ```
+  
