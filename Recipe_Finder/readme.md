@@ -3,7 +3,7 @@
 
 # Table of Contents
 - [Overview](#Overview)
-- Getting Started
+- [Getting Started](#GettingStarted)
     - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
