@@ -3,7 +3,7 @@
 
 # Table of Contents
 - [Overview](#overview)
-    -[Purpose and Features](purposeandfeatures) 
+   - [Purpose and Features](purposeandfeatures) 
 - [Getting Started](#gettingStarted)
     - [Installation](#installation)
 - [Usage](#usage)
@@ -19,15 +19,18 @@
   - The purpose of a recipe finder application is to provide users with a convenient and efficient way to discover **cooking ideas and recipes** based on their preferences and available ingredients.
   -  It aims to simplify the cooking experience by offering features such as **ingredient-based searches, filtering options, and detailed recipe information**.
       ### Features✨
-      🔍**Ingredient-Based Search:**
-         - Allow users to **search for recipes** by entering ingredients they have or want to use.
-         - The application should then **fetch and display recipes** that include those specific ingredients.
-      🔄**Filter and Sorting Options:**
+     1.**Ingredient-Based Search** 🔍
+       - Allow users to **search for recipes** by entering ingredients they have or want to use.
+       - The application should then **fetch and display recipes** that include those specific ingredients.
+         
+     2.**Filter and Sorting Options**🔄
         - Provide users with options to **filter and sort search results** based on criteria such as **cooking time, difficulty level, or dietary preferences**. 
         - This enhances user **customization and experience**.
-      ⚙️**Detailed Recipe Information:**
+  
+     3.**Detailed Recipe Information**⚙️
         - Display comprehensive information for each recipe, **including ingredients, step-by-step instructions, nutritional facts, and any relevant tips** or variations.
-      💻**Responsive Design:**
+  
+     4.**Responsive Design**💻
         - A responsive design enhances **accessibility and user engagement** across different platforms.
   
 ## Getting Started
