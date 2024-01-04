@@ -2,8 +2,8 @@
 
 
 # Table of Contents
-- [Overview](#Overview)
-- [Getting Started](#GettingStarted)
+- [Overview](#overview)
+- [Getting Started](#gettingStarted)
     - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
