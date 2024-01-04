@@ -38,7 +38,8 @@
   - To set up the recipe finder on your local machine, follow these steps:
     ```
     git clone https://github.com/yourusername/recipe-finder.git
-    cd recipe-finder ```
+    cd recipe-finder
+    ```
     
   - Get a free API Key at **https://www.edamam.com/**
   - Enter your API in **main.js/config.js** it's your choice to make
