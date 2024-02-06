@@ -1,4 +1,5 @@
 const accessKey = process.env.UNSPLASH_API_KEY;
+
   require('dotenv').config()
 
 // console.log(process.env)
