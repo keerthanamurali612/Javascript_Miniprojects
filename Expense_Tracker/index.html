@@ -4,25 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css"> 
 </head>
+
 <body>
-
-    <h1 class="title">Expense Tracker</h1>
-
     <div class="container">
-        <h2 class="sub-title">Add A New Item:</h2>
-        <label for="name">Name:</label>
-        <input type="text" class="txt-name" placeholder="Where was the expense made?">
-        <label for="date">Date:</label>
-        <input type="date" class="date" >
-        <label for="amount">Amount:</label>
-        <input type="text" class="amount">
-
-        <button type="submit" class="btn">Add Expense</button>
+        <div class="ledger">
+            <h2>Expense Tracker</h2>
+            <h4>Your Balance</h4>
+            <h1 id="balance"> ₹ 0.00</h1>
+            <!-- INCOME AND EXPENSE -->
+            <div class="inc-exp-container">
+                <div class="inc">
+                    <h4>Income</h4>
+                    <p id="inc-amt" class="amt plus">₹ 0.00</p>
+                </div>
+                <div class="exp">
+                    <h4>Expense</h4>
+                    <p id="exp-amt" class="amt minus">₹ 0.00</p>
+                </div>              
+            </div>
+            <!-- DESCRIPTION AND AMOUNT -->
+            <form action="#" id="form">
+                <div class="form-control">
+                    <label for="desc">Description</label>
+                    <input type="text" name="text" id="desc" placeholder="Enter Description">
+                </div>            
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" name="amount" id="amount" placeholder="Enter Amount">
+                </div>
+                <button class="btn" type="submit">Add Transaction</button>
+            </form>
+        </div>
+        <!-- TRANSACTION -->
+        <div class="transaction">
+            <h3>Transaction Details</h3>
+            <ul class="trans" id="trans">
+                <li class="exp">
+                    Insurance
+                    <span>-1500</span>
+                    <button class="btn-del">x</button>
+                </li>
+                <li class="inc">
+                    Salary
+                    <span>3500</span>
+                    <button class="btn-del">x</button>
+                </li>
+                <li class="exp">
+                    Transport
+                    <span>-500</span>
+                    <button class="btn-del">x</button>
+                </li>               
+            </ul>
+        </div>        
     </div>
 
-    
+
+    <!-- SCRIPT FILE -->
+    <script src="main.js"></script>
 </body>
 </html>
