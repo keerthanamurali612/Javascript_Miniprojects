@@ -8,9 +8,10 @@ const amount=document.querySelector("#amt");
 
 const dummyData=[
     {id:1,description:"Flower",amount:-20},
-    {id:2,description:"Salary",amount:2000},
-    {id:3,description:"Book",amount:-200},
-    {id:4,description:"Camera",amount:-2500},
+    {id:2,description:"Salary",amount:35000},
+    {id:3,description:"Book",amount:10},
+    {id:4,description:"Camera",amount:-150},
+    {id:5,description:"Petrol",amount:-250},
 ];
 
 let transaction=dummyData;
@@ -22,8 +23,9 @@ function loadTransactionDetails(transaction){
     item.innerHTML=`
     ${transaction.description}
     <span>${sign} ${Math.abs(transaction.amount)}</span> 
-    <button class="btn-del" onclick="removeTrans($ {transaction.id})"> x </button>
+    <button class="btn-del" onclick="removeTrans(${transaction.id})"> x </button>
     `; 
+
     trans.appendChild(item);
     console.log(transaction);
 }
@@ -40,9 +42,32 @@ function removeTrans(id){
 
 ;}
 
+function updateAmount(){
+
+    const amounts=transaction.map((transaction) =>
+    transaction.amount);
+    const total=amounts.reduce((acc,item) =>(acc +=item),
+    0).toFixed(2);
+    balance.innerHTML=`₹ ${total}`;
+
+    const income =amounts
+    .filter((item) => item>0)
+    .reduce ((acc,item) =>(acc +=item),0)
+    .toFixed(2) ;
+    inc_amt.innerHTML=`₹ ${income}`
+
+    const expense =amounts
+    .filter((item) => item <0)
+    .reduce ((acc,item) =>(acc +=item),0)
+    .toFixed(2) ;
+    exp_amt.innerHTML=`₹ ${Math.abs(expense)}`
+
+}
+
 function config(){
     trans.innerHTML="";     /* remove list */
     transaction.forEach(loadTransactionDetails);
+    updateAmount();
 }
 
 window.addEventListener("load",function(){
