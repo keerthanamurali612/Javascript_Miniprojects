@@ -68,7 +68,6 @@ function updateAmount(){
 
 }
 
-
 function config(){
     trans.innerHTML="";     /* remove list */
     transaction.forEach(loadTransactionDetails);
