@@ -6,16 +6,17 @@ const form=document.querySelector("#form");
 const description=document.querySelector("#desc");
 const amount=document.querySelector("#amt");
 
-const dummyData=[
-    {id:1,description:"Flower",amount:-20},
-    {id:2,description:"Salary",amount:35000},
-    {id:3,description:"Book",amount:10},
-    {id:4,description:"Camera",amount:-150},
-    {id:5,description:"Petrol",amount:-250},
-];
+// const dummyData=[
+//     {id:1,description:"Flower",amount:-20},
+//     {id:2,description:"Salary",amount:35000},
+//     {id:3,description:"Book",amount:10},
+//     {id:4,description:"Camera",amount:-150},
+//     {id:5,description:"Petrol",amount:-250},
+// ];
 
-let transaction=dummyData;
+// let transaction=dummyData;
 
+// Transaction Details
 function loadTransactionDetails(transaction){
     const sign=transaction.amount < 0 ? "-":"+";
     const item=document.createElement("li");
@@ -30,18 +31,21 @@ function loadTransactionDetails(transaction){
     console.log(transaction);
 }
 
+// Remove Transaction
 function removeTrans(id){
     if(confirm("Are you sure you want to delete Tranasaction"
     )){
         transaction=transaction.filter((transaction) =>
         transaction.id !=id);
         config();
+        updateLocalStorage();
     } else{
         return;
     }
 
 ;}
 
+// Update Transaction
 function updateAmount(){
 
     const amounts=transaction.map((transaction) =>
@@ -64,12 +68,46 @@ function updateAmount(){
 
 }
 
+
 function config(){
     trans.innerHTML="";     /* remove list */
     transaction.forEach(loadTransactionDetails);
     updateAmount();
 }
 
+// Add Transaction
+function addTransaction(e){
+    e.preventDefault();
+
+    if(description.value.trim() == "" || amount.value.trim() == ""){
+        alert("Please enter description and amount");
+    }else{
+        const transaction ={
+            id:uniqueId,
+            description:description.value,
+            amount:+amount.value,
+        };
+        transaction.push(transaction);
+        loadTransactionDetails(transaction);
+        description.value= "";
+        amount.value= "";
+        updateAmount();
+        updateLocalStorage();
+    }
+
+}
+
+function uniqueId(){
+    return Math.floor(Math.random()*10000000)
+}
+
+form.addEventListener("submit",addTransaction);
+
+
 window.addEventListener("load",function(){
     config();
-})
+});
+
+function updateLocalStorage(){
+    localStorage.setItem("trans",JSON.stringify(transaction));
+}
