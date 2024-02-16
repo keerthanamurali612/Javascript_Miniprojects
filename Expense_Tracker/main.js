@@ -16,19 +16,26 @@ const amount=document.querySelector("#amt");
 
 // let transaction=dummyData;
 
+
+const localStorageTrans=JSON.parse(localStorage.getItem ("trans"));
+let transaction=localStorage.getItem("trans")!==null;
+
+
+
+
 // Transaction Details
 function loadTransactionDetails(transaction){
-    const sign=transaction.amount < 0 ? "-":"+";
-    const item=document.createElement("li");
+    const sign =transaction.amount < 0 ? "-" : "+";
+    const item =document.createElement("li");
     item.classList.add(transaction.amount <0 ? "exp" :"inc");   
     item.innerHTML=`
     ${transaction.description}
     <span>${sign} ${Math.abs(transaction.amount)}</span> 
-    <button class="btn-del" onclick="removeTrans(${transaction.id})"> x </button>
+    <button class="btn-del" onclick="removeTrans(${transaction.id})">x</button>
     `; 
 
     trans.appendChild(item);
-    console.log(transaction);
+    // console.log(transaction);
 }
 
 // Remove Transaction
@@ -68,9 +75,19 @@ function updateAmount(){
 
 }
 
+// function config(){
+//     trans.innerHTML= "";     /* remove list */
+//     transaction.forEach(loadTransactionDetails);
+//     updateAmount();
+// }
+
 function config(){
-    trans.innerHTML="";     /* remove list */
-    transaction.forEach(loadTransactionDetails);
+    trans.innerHTML= "";     /* remove list */
+    if (Array.isArray(transaction)) {
+        transaction.forEach(loadTransactionDetails);
+    } else {
+        console.error("Transaction is not an array:", transaction);
+    }
     updateAmount();
 }
 
@@ -78,14 +95,15 @@ function config(){
 function addTransaction(e){
     e.preventDefault();
 
-    if(description.value.trim() == "" || amount.value.trim() == ""){
+    if(description && description.value.trim() == "" || amount && amount.value.trim() == ""){
         alert("Please enter description and amount");
     }else{
         const transaction ={
             id:uniqueId,
             description:description.value,
-            amount:+amount.value,
+            amount: +amount.value,
         };
+
         transaction.push(transaction);
         loadTransactionDetails(transaction);
         description.value= "";
@@ -110,3 +128,5 @@ window.addEventListener("load",function(){
 function updateLocalStorage(){
     localStorage.setItem("trans",JSON.stringify(transaction));
 }
+
+
