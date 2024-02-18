@@ -28,3 +28,5 @@ Set up your HTML, CSS, and JavaScript files.
 ## 7. Data Management:
 - Decide how you'll store expense data. You can use arrays, objects, or even a database if you want to make your expense tracker more advanced.
 - Implement functions to save and retrieve data, possibly using browser storage APIs like localStorage.
+
+  <p>Don't forget to give the project a star! Thanks again!</p>
